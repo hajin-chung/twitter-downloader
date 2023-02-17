@@ -1,6 +1,7 @@
 import { useState } from "preact/hooks";
 import { Button } from "../components/Button.tsx";
 import { Input } from "../components/Input.tsx";
+import { Spinner } from "../components/Spinner.tsx";
 import { fetchVideoUrl } from "../utils/api.ts";
 
 export default function Download() {
@@ -30,6 +31,7 @@ export default function Download() {
       <div class="flex flex-col items-center text-white gap-2">
         {video && <a href={video}>{video}</a>}
         {video && <video src={video} controls class="h-[500px]" />}
+        {loading && <Spinner />}
       </div>
     </div>
   );

@@ -5,6 +5,7 @@ export default function HeadComponent() {
     <Head>
       <title>Twitter Video Downloader</title>
       <link rel="icon" href="favicon.svg"></link>
+      <link rel="stylesheet" href="spinner.css"></link>
     </Head>
   );
 }
