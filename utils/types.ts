@@ -3,3 +3,7 @@ export type Video = {
   tweet: string;
   video: string;
 };
+
+export type VideoWithCount = Video& {
+  count: number; 
+}

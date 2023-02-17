@@ -19,13 +19,15 @@ export const Player: FunctionalComponent<VideoProps> = ({ src }) => {
   };
 
   return (
-    <a href={src}>
+    <a
+      href={src}
+      class="duration-150 hover:shadow-lg hover:shadow-slate-800 block"
+    >
       <video
         src={src}
         ref={ref}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
-        class="blur-lg"
         onTouchStart={onMouseEnter}
         onTouchEnd={onMouseLeave}
         muted

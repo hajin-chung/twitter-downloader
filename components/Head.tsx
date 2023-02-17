@@ -18,6 +18,7 @@ const HeadComponent: FunctionalComponent<HeadProps> = ({ title }) => {
       <meta name="googlebot" content="all"></meta>
       <link rel="icon" href="favicon.svg"></link>
       <link rel="stylesheet" href="spinner.css"></link>
+      <link rel="stylesheet" href="main.css"></link>
     </Head>
   );
 };
