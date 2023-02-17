@@ -1,4 +1,5 @@
 import { Handlers } from "$fresh/server.ts";
+import { updateDownload } from "../../utils/db.ts";
 
 export const handler: Handlers = {
   async GET(req) {
@@ -27,13 +28,14 @@ export const handler: Handlers = {
           b.bitrate - a.bitrate
         )[0].url;
 
-      // TODO: update db
+      updateDownload(tweet, videoUrl);
       return new Response(JSON.stringify({ url: videoUrl }), {
         status: 200,
         headers: { "Content-Type": "application/json" },
       });
     } catch (err) {
-      return new Response(err, { status: 200 });
+      console.error(err);
+      return new Response(JSON.stringify(err), { status: 200 });
     }
   },
 };
