@@ -4,6 +4,7 @@ import { Video } from "../utils/types.ts";
 
 export default function LiveList() {
   const [videos, setVideos] = useState<Video[]>([]);
+  const [latestTouch, setLatestTouch] = useState("");
 
   useEffect(() => {
     const fetchList = async () => {

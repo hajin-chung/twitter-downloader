@@ -26,6 +26,8 @@ export const Player: FunctionalComponent<VideoProps> = ({ src }) => {
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
         class="blur-lg"
+        onTouchStart={onMouseEnter}
+        onTouchEnd={onMouseLeave}
         muted
       />
     </a>
