@@ -15,7 +15,7 @@ export default function LiveList() {
   }, []);
 
   return (
-    <div className="w-full grid gap-4 grid-flow-row-dense grid-cols-3 mt-8">
+    <div className="w-full grid gap-4 grid-cols-[repeat(auto-fill,300px)] mt-8 flex-wrap justify-center">
       {videos.map(({ tweet, video }) => (
         <div className="flex flex-col gap-1">
           <a href={tweet} class="text-gray-500 hover:text-white underline">

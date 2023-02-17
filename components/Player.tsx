@@ -10,7 +10,7 @@ export const Player: FunctionalComponent<VideoProps> = ({ src }) => {
 
   const onMouseEnter = () => {
     if (!ref.current) return;
-    ref.current?.play();
+    ref.current.play();
   };
 
   const onMouseLeave = () => {
@@ -19,13 +19,15 @@ export const Player: FunctionalComponent<VideoProps> = ({ src }) => {
   };
 
   return (
-    <video
-      src={src}
-      ref={ref}
-      controls
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-      class="blur-lg"
-    />
+    <a href={src}>
+      <video
+        src={src}
+        ref={ref}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+        class="blur-lg"
+        muted
+      />
+    </a>
   );
 };
