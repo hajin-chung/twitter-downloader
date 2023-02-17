@@ -1,4 +1,5 @@
 import Head from "../components/Head.tsx";
+import LiveList from "../islands/LiveList.tsx";
 
 export default function Live() {
   return (
@@ -25,6 +26,7 @@ export default function Live() {
                 Ranking
               </a>
             </div>
+            <LiveList />
           </div>
         </main>
       </body>
