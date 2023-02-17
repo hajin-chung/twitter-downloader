@@ -1,7 +1,7 @@
 import { useState } from "preact/hooks";
 import { Button } from "../components/Button.tsx";
 import { Input } from "../components/Input.tsx";
-import { fetchVideoUrl } from "../utils.ts";
+import { fetchVideoUrl } from "../utils/api.ts";
 
 export default function Download() {
   const [tweet, setTweet] = useState("");
