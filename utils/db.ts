@@ -12,13 +12,16 @@ export const updateDownload = async (tweet: string, video: string) => {
     "INSERT INTO downloads (tweet, video, createdAt) VALUES($1, $2, $3)",
     [tweet, video, createdAt],
   );
+  db.end();
 };
 
 export const getLive = async (offset: number) => {
   await db.connect();
 
-  return await db.queryObject<Video>(
+  const ret = await db.queryObject<Video>(
     "SELECT tweet, video FROM downloads ORDER BY createdAt desc LIMIT 10 OFFSET $1",
     [offset],
   );
+  db.end();
+  return ret;
 };
